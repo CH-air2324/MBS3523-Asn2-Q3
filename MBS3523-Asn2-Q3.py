@@ -5,7 +5,7 @@ import numpy as np
 
 confThreshold = 0.4
 
-cam = cv2.VideoCapture('img.jpg')
+cam = cv2.VideoCapture(0)
 
 # Create an empty list - classes[] and point the classesFile to 'coco80.names'
 classesFile = 'coco80.names'
@@ -27,7 +27,7 @@ net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 while True:
     success , img = cam.read()
     if not success:
-        cam = cv2.VideoCapture('img.jpg')
+        cam = cv2.VideoCapture(0)
         success , img = cam.read()
 
     height, width, ch = img.shape
